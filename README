@@ -1,0 +1,17 @@
+A talk-like client/server setup written in node.js
+
+Protocol:
+
+GET /   -> blocks and then returns text; closes connection
+POST /  -> sends text to all clients
+
+To try it out:
+
+$ ./client clone c1     # Create a client
+$ ./client clone c2     # another client
+$ ./server &
+
+$ ./c1                  # Runs the first client
+$ scp c2 somewhere@else:
+$ ssh somewhere@else
+ssh$ ./c2 connect server-hostname
